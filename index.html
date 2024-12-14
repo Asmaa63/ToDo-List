@@ -16,21 +16,20 @@
 
     <!-- Input section for adding new tasks -->
     <div class="input-section">
-      <input type="text" id="taskInput" placeholder="Add a new task..." />
-      <button id="addTaskButton" disabled>Add</button>
+      <input type="text" id="taskInput" placeholder="Add a new task..." tabindex="0" />
+      <button id="addTaskButton" disabled aria-label="Add new task">Add</button>
     </div>
 
     <!-- Filter buttons for task filtering (All, Completed, Pending) -->
     <div class="filters">
-      <button class="filter-button active" data-filter="all" id="showAll">All</button>
-      <button class="filter-button" data-filter="completed" id="showCompleted">Completed</button>
-      <button class="filter-button" data-filter="pending" id="showPending">Pending</button>
-      <button id="clearAllTasks" class="clear-button">Clear All</button>
+      <button class="filter-button active" data-filter="all" id="showAll" aria-label="Show all tasks">All</button>
+<button class="filter-button" data-filter="completed" id="showCompleted" aria-label="Show completed tasks">Completed</button>
+<button class="filter-button" data-filter="pending" id="showPending" aria-label="Show pending tasks">Pending</button>
+<button id="clearAllTasks" class="clear-button" aria-label="Clear all tasks">Clear All</button>
     </div>
 
     <!-- Ordered list to display the tasks dynamically -->
-    <ol id="taskList"></ol>
-
+    <ol id="taskList" aria-live="polite" aria-label="Task list with dynamic updates"></ol>
     <!-- Toast notification element for displaying messages -->
     <div id="customToast" class="custom-toast"></div>
   </div>
@@ -38,7 +37,7 @@
   <!-- Modal for editing tasks -->
   <div id="editModal" class="modal">
     <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
+      <span id="closeModal" class="close" aria-label="Close modal">&times;</span>
       <h2>Edit Task</h2>
       <input type="text" id="editTaskInput" placeholder="Edit your task..." />
       <button id="saveTaskButton">Save</button>

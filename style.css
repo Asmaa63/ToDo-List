@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
+  background: linear-gradient(to right, #72687d, #a2beee);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,8 +55,8 @@ header h1 {
 /* Add button */
 #addTaskButton {
   padding: 10px 15px;
-  background: #ccc;
-  color: #3e3e3e;
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 1.5rem;
@@ -65,13 +65,13 @@ header h1 {
 }
 
 #addTaskButton:hover:not(:disabled) {
-  background: #2d1249;
+  background: #0260c5;
   color: #ebe8e8;
 }
 
 #addTaskButton:disabled {
-  background: #e0e0e0;
-  color: #9e9e9e;
+  background-color: #cccccc;
+  color: #666666;
   cursor: not-allowed;
 }
 

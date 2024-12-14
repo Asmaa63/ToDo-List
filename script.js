@@ -21,8 +21,6 @@ try {
 
 // Load tasks on page load
 window.onload = () => {
-  // localStorage.removeItem("tasks");
-  // tasks = [];
   renderTasks(); // Render all tasks on initial load
 };
 
