@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #72687d, #a2beee);
+  background: linear-gradient(to right, #8e9eab, #eef2f3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +24,7 @@ body {
 /* Header styling */
 header h1 {
   font-size: 2rem;
-  color: #1f1e1f;
+  color: #333333;
   margin-bottom: 20px;
 }
 
@@ -55,7 +55,7 @@ header h1 {
 /* Add button */
 #addTaskButton {
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color:#00bcd4;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -65,7 +65,7 @@ header h1 {
 }
 
 #addTaskButton:hover:not(:disabled) {
-  background: #0260c5;
+  background: #0097a7;;
   color: #ebe8e8;
 }
 
@@ -93,7 +93,7 @@ header h1 {
 }
 
 .filter-button.active, .clear-button:hover {
-  background: #2d1249;
+  background: #673ab7;
   color: #fff;
 }
 
@@ -109,9 +109,9 @@ header h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f9f9f9;
+  background: #ffffff;
+border: 1px solid #e0e0e0;
   padding: 10px 15px;
-  border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 10px;
   transition: background-color 0.3s;
@@ -143,7 +143,7 @@ header h1 {
 }
 
 .complete-btn {
-  background-color: #4caf50;
+  background-color: #43a047;
   color: white;
 }
 
@@ -153,7 +153,7 @@ header h1 {
 }
 
 .delete-btn {
-  background-color: #f44336;
+  background-color: #e53935;
   color: white;
 }
 
@@ -171,7 +171,7 @@ header h1 {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #323232;
+  background-color: #212121;
   color: #fff;
   padding: 15px 20px;
   border-radius: 8px;
@@ -201,7 +201,8 @@ header h1 {
 }
 
 .modal-content {
-  background: #f9f9f9;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
   margin: auto;
   margin-top: 10%;
   padding: 30px 20px;
