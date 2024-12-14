@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <!-- Link to external CSS for styling -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="todo-container">
     <!-- Header section with the app title -->
@@ -23,9 +25,11 @@
     <!-- Filter buttons for task filtering (All, Completed, Pending) -->
     <div class="filters">
       <button class="filter-button active" data-filter="all" id="showAll" aria-label="Show all tasks">All</button>
-<button class="filter-button" data-filter="completed" id="showCompleted" aria-label="Show completed tasks">Completed</button>
-<button class="filter-button" data-filter="pending" id="showPending" aria-label="Show pending tasks">Pending</button>
-<button id="clearAllTasks" class="clear-button" aria-label="Clear all tasks">Clear All</button>
+      <button class="filter-button" data-filter="completed" id="showCompleted"
+        aria-label="Show completed tasks">Completed</button>
+      <button class="filter-button" data-filter="pending" id="showPending"
+        aria-label="Show pending tasks">Pending</button>
+      <button id="clearAllTasks" class="clear-button" aria-label="Clear all tasks">Clear All</button>
     </div>
 
     <!-- Ordered list to display the tasks dynamically -->
@@ -44,6 +48,7 @@
       <button id="saveTaskButton">Save</button>
     </div>
   </div>
-  </body>
-  <script src="script.js"></script>
+</body>
+<script src="script.js"></script>
+
 </html>

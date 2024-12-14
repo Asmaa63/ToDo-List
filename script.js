@@ -179,8 +179,8 @@ const renderTasks = (filter = "all") => {
     filter === "completed"
       ? task.completed
       : filter === "pending"
-      ? !task.completed
-      : true
+        ? !task.completed
+        : true
   );
 
   if (filteredTasks.length === 0) {
@@ -198,9 +198,8 @@ const renderTasks = (filter = "all") => {
     taskItem.innerHTML = `
     <span class="task-text">${index + 1}. ${task.text}</span>
     <div class="task-buttons">
-      <button class="complete-btn" style="background-color: ${buttonColor}; color: white;">${
-      task.completed ? "Complete" : "Pending"
-    }</button>
+      <button class="complete-btn" style="background-color: ${buttonColor}; color: white;">${task.completed ? "Complete" : "Pending"
+      }</button>
       <button class="edit-btn">Edit</button>
       <button class="delete-btn">Delete</button>
     </div>`;
