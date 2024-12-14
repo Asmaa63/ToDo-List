@@ -1,0 +1,449 @@
+/* Reset default styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main container styling */
+.todo-container {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Header styling */
+header h1 {
+  font-size: 2rem;
+  color: #1f1e1f;
+  margin-bottom: 20px;
+}
+
+/* Input section */
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input field */
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: #3d3d3e;
+}
+
+/* Add button */
+#addTaskButton {
+  padding: 10px 15px;
+  background: #ccc;
+  color: #3e3e3e;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#addTaskButton:hover:not(:disabled) {
+  background: #2d1249;
+  color: #ebe8e8;
+}
+
+#addTaskButton:disabled {
+  background: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Filters styling */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-button, .clear-button {
+  padding: 8px 12px;
+  background: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-button.active, .clear-button:hover {
+  background: #2d1249;
+  color: #fff;
+}
+
+/* Task list */
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Task item */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.task-item.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Task buttons */
+.task-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.task-buttons button {
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.complete-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.task-buttons button:hover {
+  transform: scale(1.05);
+}
+
+.task-buttons button:active {
+  transform: scale(0.95);
+}
+
+/* Toast notification */
+.custom-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #323232;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.custom-toast.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: #f9f9f9;
+  margin: auto;
+  margin-top: 10%;
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #ff5555;
+}
+
+.modal h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal input {
+  display: block;
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.modal input:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+.modal button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal button:hover {
+  background: #1976d2;
+}
+
+.modal button:active {
+  transform: scale(0.98);
+}
+
+/* No tasks message */
+.no-tasks {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .todo-container {
+    padding: 10px;
+    width: 95%;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  #taskInput {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+
+  #addTaskButton {
+    font-size: 1.3rem;
+    padding: 8px 10px;
+  }
+
+  .filter-button, .clear-button {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+
+  .task-item {
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-buttons {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-container {
+    padding: 8px;
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  #taskInput {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  #addTaskButton {
+    font-size: 1.1rem;
+    padding: 6px 8px;
+  }
+
+  .filter-button, .clear-button {
+    padding: 5px 7px;
+    font-size: 0.85rem;
+  }
+
+  .task-item {
+    padding: 6px 8px;
+    margin-bottom: 8px;
+  }
+
+  .task-buttons {
+    gap: 8px;
+  }
+
+  .modal-content {
+    padding: 20px 10px;
+    margin-top: 20%;
+    width: 95%;
+  }
+
+  .modal h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .modal button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .custom-toast {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .todo-container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  #taskInput {
+    font-size: 0.75rem;
+    padding: 5px;
+  }
+
+  #addTaskButton {
+    font-size: 1rem;
+    padding: 5px 7px;
+  }
+
+  .filter-button, .clear-button {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+
+  .task-item {
+    padding: 5px 6px;
+    font-size: 0.8rem;
+  }
+
+  .task-buttons button {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+
+  .modal-content {
+    padding: 15px 8px;
+    margin-top: 30%;
+    width: 95%;
+  }
+
+  .modal h2 {
+    font-size: 1rem;
+  }
+
+  .modal input {
+    font-size: 0.8rem;
+  }
+
+  .modal button {
+    font-size: 0.85rem;
+    padding: 7px;
+  }
+
+  .custom-toast {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+}
