@@ -164,18 +164,22 @@ const renderTasks = (filter = "all") => {
     const taskItem = document.createElement("li");
     taskItem.className = `task-item ${task.completed ? "completed" : ""}`;
     taskItem.draggable = true;
+
+    const buttonColor = task.completed ? "#43a047" : "rgb(239, 159, 10)";
+
     taskItem.innerHTML = `
-      <span class="task-text">${task.text}</span>
-      <div class="task-buttons">
-        <button class="complete-btn">${
-          task.completed ? "Complete" : "Pending"
-        }</button>
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
-      </div>`;
+    <span class="task-text">${task.text}</span>
+    <div class="task-buttons">
+      <button class="complete-btn" style="background-color: ${buttonColor}; color: white;">${
+      task.completed ? "Complete" : "Pending"
+    }</button>
+      <button class="edit-btn">Edit</button>
+      <button class="delete-btn">Delete</button>
+    </div>`;
     taskItem.dataset.index = index;
     taskList.appendChild(taskItem);
   });
+
 };
 
 // Filter tasks based on the selected filter
